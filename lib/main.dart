@@ -29,6 +29,31 @@ class _QuoteListState extends State<QuoteList> {
       text: "I have nothing to declare except my genius",
     ),
   ];
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+      child: Column(
+        children: <Widget>[
+          Text(
+            quote.text,
+            style: const TextStyle(
+              fontSize: 18.0,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 7.0),
+          Text(
+            quote.author,
+            style: const TextStyle(
+              fontSize: 14.0,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
