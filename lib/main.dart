@@ -21,18 +21,19 @@ class _QuoteListState extends State<QuoteList> {
       text: "Be yourself; everyone else is already taken",
     ),
     Quote(
-      author: "Julius Monke",
-      text: "I have nothing to declare except my genius",
+      author: "Knaye West",
+      text: "I am the reincarnation of Jesus Christ",
     ),
     Quote(
-      author: "Oscar Wilder",
+      author: "Spaghetti man",
       text: "I have nothing to declare except my genius",
     ),
   ];
   Widget quoteTemplate(quote) {
     return Card(
-      margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+      margin: const EdgeInsets.all(12.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Text(
             quote.text,
