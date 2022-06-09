@@ -64,9 +64,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.purple[600],
       ),
       body: Column(
-        children: quotes
-            .map((quote) => Text("${quote.text} - ${quote.author}"))
-            .toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
