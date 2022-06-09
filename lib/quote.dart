@@ -4,10 +4,14 @@ class Quote {
   String? author;
 
   //Constructor
-  Quote(String t, String a) {
-    text = t;
-    author = a;
+
+  Quote({this.text = "", this.author = ""});
+  /*  This is another way of writing what's below
+  Quote({txt = "", String auth = ""}) {
+    text = txt;
+    author = auth;
   }
+  */
 }
 
-//Quote myQuote = Quote("this is an example", "spaghetti man");  EXAMPLE
+//Quote myQuote = Quote(txt: "this is an example", auth: "spaghetti man");  //EXAMPLE

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,10 +15,19 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<String> quotes = [
-    "Be yourself; everyone else is already taken",
-    "I have nothing to declare except my genius",
-    "The truth is rarely pure and never simple",
+  List<Quote> quotes = [
+    Quote(
+      author: "Oscar Wilde",
+      text: "Be yourself; everyone else is already taken",
+    ),
+    Quote(
+      author: "Julius Monke",
+      text: "I have nothing to declare except my genius",
+    ),
+    Quote(
+      author: "Oscar Wilder",
+      text: "I have nothing to declare except my genius",
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -29,7 +39,9 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.purple[600],
       ),
       body: Column(
-        children: quotes.map((quote) => Text(quote)).toList(),
+        children: quotes
+            .map((quote) => Text("${quote.text} - ${quote.author}"))
+            .toList(),
       ),
     );
   }
