@@ -32,6 +32,10 @@ class _QuoteListState extends State<QuoteList> {
       author: "Spaghetti man",
       text: "I have nothing to declare except my genius",
     ),
+    Quote(
+      author: "Pablo",
+      text: "Why do I live, just to suffer ",
+    ),
   ];
   //Build function to display quotes as a column of QuoteCards(separate class)
   @override
