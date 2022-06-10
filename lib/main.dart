@@ -45,7 +45,18 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         //Has a list of children mapped to a quotecard list through an anonymous function
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map((quote) => QuoteCard(
+                  quote: quote,
+                  //Delete requires a function to be passed in since we need a function for the onPressed feature of the delete button
+                  delete: () {
+                    //Define a setState function to remove a quote from the list of quotes above
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  },
+                ))
+            .toList(),
       ),
     );
   }

@@ -5,7 +5,10 @@ import 'quote.dart';
 class QuoteCard extends StatelessWidget {
   //Final variable since stless & constructor to accept quotes to create card
   final Quote quote;
-  const QuoteCard({required this.quote});
+  //You can create variables that are functions in flutter
+  final Function() delete;
+  //Constructor has passed in parameter from main.dart
+  const QuoteCard({required this.quote, required this.delete});
 
   //Build function for the design of each card
   @override
@@ -34,7 +37,7 @@ class QuoteCard extends StatelessWidget {
             height: 7.0,
           ),
           TextButton.icon(
-            onPressed: () {},
+            onPressed: delete,
             label: const Text(
               "delete quote",
               style: TextStyle(fontSize: 12.0),
