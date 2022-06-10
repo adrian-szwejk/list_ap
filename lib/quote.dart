@@ -4,7 +4,6 @@ class Quote {
   String author;
 
   //Constructor
-
   Quote({this.text = "", this.author = ""});
   /*  This is another way of writing what's below
   Quote({txt = "", String auth = ""}) {

@@ -8,6 +8,7 @@ void main() {
   ));
 }
 
+//Class to house and display all quotes
 class QuoteList extends StatefulWidget {
   const QuoteList({Key? key}) : super(key: key);
 
@@ -15,7 +16,9 @@ class QuoteList extends StatefulWidget {
   State<QuoteList> createState() => _QuoteListState();
 }
 
+//State to allow for changing information
 class _QuoteListState extends State<QuoteList> {
+  //list of quotes
   List<Quote> quotes = [
     Quote(
       author: "Oscar Wilde",
@@ -30,7 +33,7 @@ class _QuoteListState extends State<QuoteList> {
       text: "I have nothing to declare except my genius",
     ),
   ];
-
+  //Build function to display quotes as a column of QuoteCards(separate class)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +44,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.purple[600],
       ),
       body: Column(
+        //Has a list of children mapped to a quotecard list through an anonymous function
         children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
       ),
     );

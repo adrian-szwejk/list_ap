@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
 
+//Class to create design for shadowed cards for quotes displayed
 class QuoteCard extends StatelessWidget {
+  //Final variable since stless & constructor to accept quotes to create card
   final Quote quote;
   const QuoteCard({required this.quote});
 
+  //Build function for the design of each card
   @override
   Widget build(BuildContext context) {
     return Card(
