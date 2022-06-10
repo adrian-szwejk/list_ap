@@ -8,7 +8,7 @@ void main() {
 }
 
 class QuoteList extends StatefulWidget {
-  QuoteList({Key? key}) : super(key: key);
+  const QuoteList({Key? key}) : super(key: key);
 
   @override
   State<QuoteList> createState() => _QuoteListState();
@@ -29,7 +29,29 @@ class _QuoteListState extends State<QuoteList> {
       text: "I have nothing to declare except my genius",
     ),
   ];
-  Widget quoteTemplate(quote) {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: const Text("Quotes"),
+        centerTitle: true,
+        backgroundColor: Colors.purple[600],
+      ),
+      body: Column(
+        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+      ),
+    );
+  }
+}
+
+class QuoteCard extends StatelessWidget {
+  final Quote quote;
+  const QuoteCard({required this.quote});
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(12.0),
       child: Column(
@@ -51,21 +73,6 @@ class _QuoteListState extends State<QuoteList> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: const Text("Quotes"),
-        centerTitle: true,
-        backgroundColor: Colors.purple[600],
-      ),
-      body: Column(
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }

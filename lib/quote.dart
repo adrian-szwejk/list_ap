@@ -1,7 +1,7 @@
 class Quote {
   //Variables
-  String? text;
-  String? author;
+  String text;
+  String author;
 
   //Constructor
 
